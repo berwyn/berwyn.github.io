@@ -2,7 +2,7 @@
 layout: post
 title: 'Of New Beginnings'
 date: 2014-01-28 23:30:00
-categories: jekyll update code lessons
+tags: [jekyll, update, code, lessons]
 ---
 
 So, I've finally done it. I _finally_ started this blog. After months, nay, _years_ of delaying starting a blog,
