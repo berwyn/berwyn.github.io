@@ -27,13 +27,13 @@ app/
         `-- res/ (resources for the app "Flavour 2")
 ```
 
-Using this, Gradle would spit out ```app.apk```, ```flavour1.apk``` and ```flavour2.apk``` all with their own assets. 
+Using this, Gradle would spit out ```app.apk```, ```flavour1.apk``` and ```flavour2.apk``` all with their own assets.
 
-Yay! Problem solved! 
+Yay! Problem solved!
 
 _Except not._
 
-Turns out, the employer had published all these apps with different keystores. For the uninitiated, when you build a version of an Android app to release to the Play Store you have to "sign" it cryptographically with a key you keep in a keystore. If you want to update this app, you have to sign the new APK file with the same keystore. This ensures that the person who publishes the app is the only one who's providing updates to users with it installed, even if their Google Play publishing account is compromised. This meant that merging keystores, or using a new one for all the apps, was simply impossible. 
+Turns out, the employer had published all these apps with different keystores. For the uninitiated, when you build a version of an Android app to release to the Play Store you have to "sign" it cryptographically with a key you keep in a keystore. If you want to update this app, you have to sign the new APK file with the same keystore. This ensures that the person who publishes the app is the only one who's providing updates to users with it installed, even if their Google Play publishing account is compromised. This meant that merging keystores, or using a new one for all the apps, was simply impossible.
 
 But this can be worked with, it's even easy! Loading the different keystores was simple, first by putting the keystores in source control. They're encrypted blobs, so there's no need to worry about someone stealing the keys. This makes your structure look something like this:
 
@@ -86,9 +86,9 @@ android {
 }
 ```
 
-Problem **_super_** solved! 
+Problem **_super_** solved!
 
-**Except not.** 
+**Except not.**
 
 You see, this employer was concerned about keeping their keystore and key passwords in their source control (Mind you, this is a private, self-hosted, secured source control). Something about security and red tape.
 
@@ -96,7 +96,7 @@ You see, this employer was concerned about keeping their keystore and key passwo
   <img src="/images/lyra_table.gif" alt="Rage"/>
 </figure>
 
-At this point, I'm mad. I'm not even working for this comapny, just helping my friend out of pity, and I'm solving these major, complex, corporate-BS issues for them. Suddenly, lightbulb! Flash of brilliance! What if we put the signing configs in their own gradle file, and omit that from source control? You then have a file that someone, somewhere who feels like being managerial can control, and nobody without it can build the app for the Play Store. It all takes three simple steps:
+At this point, I'm mad. I'm not even working for this company, just helping my friend out of pity, and I'm solving these major, complex, corporate-BS issues for them. Suddenly, lightbulb! Flash of brilliance! What if we put the signing configs in their own gradle file, and omit that from source control? You then have a file that someone, somewhere who feels like being managerial can control, and nobody without it can build the app for the Play Store. It all takes three simple steps:
 
   1. Move the signingConfigs section from ```build.gradle``` to ```signing.gradle```, make sure to wrap it in ```android { ... }```</li>
   2. In ```build.gradle```, inside the ```android { ... }``` add ```apply from: 'signing.gradle'```
