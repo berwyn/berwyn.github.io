@@ -6,7 +6,7 @@ pygments: true
 title: Codeweaver's Keyboard
 description: Where I muse on code and various other random things
 disqus_shortname: atomicrat2552
-# url: localhost:4000
+url: http://blog.codeweaver.so
 
 owner:
   name: berwyn
@@ -19,3 +19,6 @@ owner:
 timezone: America/Denver
 future: true
 paginate: 5
+permalink: /:categories/:title/
+
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
