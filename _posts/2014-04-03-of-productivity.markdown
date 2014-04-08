@@ -103,7 +103,7 @@ At this point, I'm mad. I'm not even working for this company, just helping my f
   3. ???
   4. Profit!
 
-At this point, he was able to produce production builds of the comapny's apps just like the old build system and I got to revel in my victory.
+At this point, he was able to produce production builds of the company's apps just like the old build system and I got to revel in my victory.
 
 <figure style="width:360px;margin-left:auto;margin-right:auto;">
   <img src="/images/luna_clap.gif"/>
