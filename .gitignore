@@ -1,3 +1,7 @@
 _site
 .DS_Store
 node_modules/
+public/css/*.scss
+public/css/*.css.map
+static/css/*.css
+static/css/*.css.map

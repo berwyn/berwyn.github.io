@@ -12,13 +12,13 @@ module.exports = (grunt) ->
           'static/css/dashie.css': 'static/css/dashie.scss'
       dev:
         options:
-          imagePath: '/images'
+          imagePath: '/static/img'
           sourceComments: 'map'
         files:
-          'static/css/dashie.css': 'dashie/css/dashie.scss'
+          'static/css/dashie.css': 'static/css/dashie.scss'
     watch:
       dev:
-        files: ['static/css/**.scss']
+        files: ['css/**.scss']
         tasks: ['sass:dev']
         options:
           interrupt: true
