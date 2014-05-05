@@ -1,8 +1,15 @@
 ---
 layout: post
 title: 'Of Productivity and Evil Gradle Scripts'
-date: 2014-04-03 16:00:00
-tags: [code, work, procrastination, android, gradle, ponies]
+date: '2014-04-03 16:00:00'
+description: "Learning how to work around red tape and do things elegantly in Gradle"
+categories:
+  - code
+  - work
+  - procrastination
+  - android
+  - gradle
+  - ponies
 ---
 
 Last time, I said I would write more often.

@@ -1,0 +1,18 @@
+*,
+*:before
+*:after {
+  box-sizing: border-box;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.callout .logo {
+  max-width: 128px;
+  max-height: 128px;
+}

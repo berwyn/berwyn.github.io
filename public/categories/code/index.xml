@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on Codeweaver&#39;s Keyboard</title>
+    <link>http://localhost:1313/categories/code/index.xml</link>
+    <language>en-gb</language>
+    <author>berwyn</author>
+    <rights>Copyright(c) 2014, berwyn; All rights reserved.</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+    
+      <item>
+        <title>Of New Beginnings</title>
+        <link>http://localhost:1313/posts/of-new-beginnings</link>
+        <pubDate>Mon 01 Jan 1010 00:00:00 UTC</pubDate>
+        <guid>http://localhost:1313/posts/of-new-beginnings</guid>
+        <descrioption>&lt;p&gt;So, I&amp;rsquo;ve finally done it. I &lt;em&gt;finally&lt;/em&gt; started this blog. After months, nay, &lt;em&gt;years&lt;/em&gt; of delaying starting a blog,
+I finally got around to it. And from this, there are lessons to be learned!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Reinventing wheels is for fun and education, not serious works&lt;/li&gt;
+&lt;li&gt;Existing tools exist for a reason&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; is cool&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/berwyn/masterdex&#34;&gt;Side&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/faye.java&#34;&gt;projects&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/eqbeats-android&#34;&gt;are&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/codeweaver&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/tyrian-explorer-chrome&#34;&gt;bane&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/mylittlefacewhen-chrome&#34;&gt;of&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/project-euler&#34;&gt;my&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/PonyExpress&#34;&gt;existence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Writing is hard. Substance takes time and many, many, &lt;em&gt;many&lt;/em&gt; rewrites&lt;/li&gt;
+&lt;li&gt;Senioritis is the worst affliction&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Anyway, it&amp;rsquo;s started, it&amp;rsquo;s out there, it&amp;rsquo;s a thing! I&amp;rsquo;m going to try to write here semi-regularly on all sorts of topics (though, you&amp;rsquo;ll
+mainly see things like code, code, maybe some more code, some sarcasm, and maybe a small pastel-coloured horse or two). I&amp;rsquo;ll also be tweaking the theme to better suit my tastes, but for now I can leave this one alone.&lt;/p&gt;
+
+&lt;p&gt;For those interested in the mechanics of it, it&amp;rsquo;s built on Jekyll, with &lt;a href=&#34;https://github.com/mmistakes&#34;&gt;mmistakes&amp;rsquo;&lt;/a&gt; &lt;a href=&#34;https://github.com/mmistake/hpstr-jekyll-theme&#34;&gt;HPSTR&lt;/a&gt; theme running on GitHub Pages. You can check out the &lt;a href=&#34;https://github.com/berwyn/berwyn.github.io&#34;&gt;source code&lt;/a&gt; if you&amp;rsquo;re so inclined.&lt;/p&gt;
+
+&lt;p&gt;Cheers, and until next time.&lt;/p&gt;
+</descrioption>
+      </item>
+    
+      <item>
+        <title>Of Productivity and Evil Gradle Scripts</title>
+        <link>http://localhost:1313/posts/of-productivity</link>
+        <pubDate>Mon 01 Jan 1010 00:00:00 UTC</pubDate>
+        <guid>http://localhost:1313/posts/of-productivity</guid>
+        <descrioption>&lt;p&gt;Last time, I said I would write more often.&lt;/p&gt;
+
+&lt;p&gt;This was clearly a &lt;em&gt;lie&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;That aside, new blog post! Yay! Why a new blog post? Well, I&amp;rsquo;m busy running a test suite at work (it&amp;rsquo;s stupidly slow) and already finished with most of my personal goals for today. Now, I&amp;rsquo;m forcing myself to write and update this blog, and hopefully include some cool ideas. One quickly comes to mind, about a helping a friend fix his employer&amp;rsquo;s stupid, stupid Android build system.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Disclaimer: I have non-tech friends who may be reading this, so I&amp;rsquo;m going to elaborate on things that you may already know if you&amp;rsquo;re a fellow software engineer.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;First, the premise. This friend came to me, asking for help migrating his company&amp;rsquo;s Android apps from Eclipse to Android&amp;rsquo;s new &lt;a href=&#34;http://tools.android.com/tech-docs/new-build-system/user-guide&#34;&gt;Gradle&lt;/a&gt; build system. Now,  all of these apps have the same core code and the only difference was the res folder (which contains text, image and layout resources). This is usually solved very nicely by the flavours system in Gradle. Using the standard directory structure, you&amp;rsquo;d have something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;app/
+`-- src/
+    `-- main/
+        `-- java/ (common code)
+        `-- res/ (common resources)
+    `-- flavour1
+        `-- res/ (resources for the app &amp;quot;Flavour 1&amp;quot;)
+    `-- flavour2
+        `-- res/ (resources for the app &amp;quot;Flavour 2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using this, Gradle would spit out &lt;code&gt;app.apk&lt;/code&gt;, &lt;code&gt;flavour1.apk&lt;/code&gt; and &lt;code&gt;flavour2.apk&lt;/code&gt; all with their own assets.&lt;/p&gt;
+
+&lt;p&gt;Yay! Problem solved!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Except not.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Turns out, the employer had published all these apps with different keystores. For the uninitiated, when you build a version of an Android app to release to the Play Store you have to &amp;ldquo;sign&amp;rdquo; it cryptographically with a key you keep in a keystore. If you want to update this app, you have to sign the new APK file with the same keystore. This ensures that the person who publishes the app is the only one who&amp;rsquo;s providing updates to users with it installed, even if their Google Play publishing account is compromised. This meant that merging keystores, or using a new one for all the apps, was simply impossible.&lt;/p&gt;
+
+&lt;p&gt;But this can be worked with, it&amp;rsquo;s even easy! Loading the different keystores was simple, first by putting the keystores in source control. They&amp;rsquo;re encrypted blobs, so there&amp;rsquo;s no need to worry about someone stealing the keys. This makes your structure look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;app/
+`-- src/
+    `-- main/
+        `-- java/
+            res/
+    `-- flavour1
+        `-- res/
+            release.keystore
+    `-- flavour2
+        `-- res/
+            release.keystore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then in your &lt;code&gt;build.gradle&lt;/code&gt;, you can do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;groovy&#34;&gt;android {
+  ...
+
+  signingConfigs {
+    flavour1 {
+      storeFile file(&#39;flavour1/release.keystore&#39;)
+      storePassowrd &amp;quot;superSecretPassword&amp;quot;
+      keyAlias &amp;quot;secretReleaseKey&amp;quot;
+      keyPassword &amp;quot;secretReleaseKeyPassword&amp;quot;
+    }
+    flavour2 {
+      storeFile file(&#39;flavour2/release.keystore&#39;)
+      storePassowrd &amp;quot;superSecretPassword&amp;quot;
+      keyAlias &amp;quot;secretReleaseKey&amp;quot;
+      keyPassword &amp;quot;secretReleaseKeyPassword&amp;quot;
+    }
+    ...
+  }
+
+  buildTypes {
+    flavour1 {
+      signingConfig signingConfigs.flavour1
+      packageName &#39;com.mycompany.flavour1&#39;
+    }
+    flavour2 {
+      signingConfig signingConfigs.flavour2
+      packageName &#39;com.mycompany.flavour2&#39;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Problem &lt;strong&gt;&lt;em&gt;super&lt;/em&gt;&lt;/strong&gt; solved!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Except not.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see, this employer was concerned about keeping their keystore and key passwords in their source control (Mind you, this is a private, self-hosted, secured source control). Something about security and red tape.&lt;/p&gt;
+
+&lt;figure style=&#34;width:500px;margin-left:auto;margin-right:auto;&#34;&gt;
+  &lt;img src=&#34;/images/lyra_table.gif&#34; alt=&#34;Rage&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;At this point, I&amp;rsquo;m mad. I&amp;rsquo;m not even working for this company, just helping my friend out of pity, and I&amp;rsquo;m solving these major, complex, corporate-BS issues for them. Suddenly, lightbulb! Flash of brilliance! What if we put the signing configs in their own gradle file, and omit that from source control? You then have a file that someone, somewhere who feels like being managerial can control, and nobody without it can build the app for the Play Store. It all takes three simple steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Move the signingConfigs section from &lt;code&gt;build.gradle&lt;/code&gt; to &lt;code&gt;signing.gradle&lt;/code&gt;, make sure to wrap it in &lt;code&gt;android { ... }&lt;/code&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;build.gradle&lt;/code&gt;, inside the &lt;code&gt;android { ... }&lt;/code&gt; add &lt;code&gt;apply from: &#39;signing.gradle&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;???&lt;/li&gt;
+&lt;li&gt;Profit!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;At this point, he was able to produce production builds of the company&amp;rsquo;s apps just like the old build system and I got to revel in my victory.&lt;/p&gt;
+
+&lt;figure style=&#34;width:360px;margin-left:auto;margin-right:auto;&#34;&gt;
+  &lt;img src=&#34;/images/luna_clap.gif&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Anyway, you can expect more posts in the near future. I&amp;rsquo;d like to start blogging about things I&amp;rsquo;m actually doing closer to real-time, as well as customise the site a bit more. Cheers, and until next time!&lt;/p&gt;
+</descrioption>
+      </item>
+    
+  </channel>
+</rss>

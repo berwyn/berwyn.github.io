@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Update on Codeweaver&#39;s Keyboard</title>
+    <link>http://localhost:1313/categories/update/index.xml</link>
+    <language>en-gb</language>
+    <author>berwyn</author>
+    <rights>Copyright(c) 2014, berwyn; All rights reserved.</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+    
+      <item>
+        <title>Of New Beginnings</title>
+        <link>http://localhost:1313/posts/of-new-beginnings</link>
+        <pubDate>Mon 01 Jan 1010 00:00:00 UTC</pubDate>
+        <guid>http://localhost:1313/posts/of-new-beginnings</guid>
+        <descrioption>&lt;p&gt;So, I&amp;rsquo;ve finally done it. I &lt;em&gt;finally&lt;/em&gt; started this blog. After months, nay, &lt;em&gt;years&lt;/em&gt; of delaying starting a blog,
+I finally got around to it. And from this, there are lessons to be learned!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Reinventing wheels is for fun and education, not serious works&lt;/li&gt;
+&lt;li&gt;Existing tools exist for a reason&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; is cool&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/berwyn/masterdex&#34;&gt;Side&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/faye.java&#34;&gt;projects&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/eqbeats-android&#34;&gt;are&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/codeweaver&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/tyrian-explorer-chrome&#34;&gt;bane&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/mylittlefacewhen-chrome&#34;&gt;of&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/project-euler&#34;&gt;my&lt;/a&gt; &lt;a href=&#34;https://github.com/berwyn/PonyExpress&#34;&gt;existence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Writing is hard. Substance takes time and many, many, &lt;em&gt;many&lt;/em&gt; rewrites&lt;/li&gt;
+&lt;li&gt;Senioritis is the worst affliction&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Anyway, it&amp;rsquo;s started, it&amp;rsquo;s out there, it&amp;rsquo;s a thing! I&amp;rsquo;m going to try to write here semi-regularly on all sorts of topics (though, you&amp;rsquo;ll
+mainly see things like code, code, maybe some more code, some sarcasm, and maybe a small pastel-coloured horse or two). I&amp;rsquo;ll also be tweaking the theme to better suit my tastes, but for now I can leave this one alone.&lt;/p&gt;
+
+&lt;p&gt;For those interested in the mechanics of it, it&amp;rsquo;s built on Jekyll, with &lt;a href=&#34;https://github.com/mmistakes&#34;&gt;mmistakes&amp;rsquo;&lt;/a&gt; &lt;a href=&#34;https://github.com/mmistake/hpstr-jekyll-theme&#34;&gt;HPSTR&lt;/a&gt; theme running on GitHub Pages. You can check out the &lt;a href=&#34;https://github.com/berwyn/berwyn.github.io&#34;&gt;source code&lt;/a&gt; if you&amp;rsquo;re so inclined.&lt;/p&gt;
+
+&lt;p&gt;Cheers, and until next time.&lt;/p&gt;
+</descrioption>
+      </item>
+    
+  </channel>
+</rss>

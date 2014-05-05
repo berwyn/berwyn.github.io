@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Title }} on {{ .Site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <language>en-gb</language>
+    <author>berwyn</author>
+    <rights>Copyright(c) 2014, berwyn; All rights reserved.</rights>
+    <updated>{{ .Date }}</updated>
+    {{ range .Data.Pages }}
+      <item>
+        <title>{{ .Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <pubDate>{{ .Date.Format "Mon 02 Jan 2014 00:00:00 MST" }}</pubDate>
+        <guid>{{ .Permalink }}</guid>
+        <descrioption>{{ .Content | html }}</descrioption>
+      </item>
+    {{ end }}
+  </channel>
+</rss>

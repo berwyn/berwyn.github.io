@@ -1,0 +1,24 @@
+{
+  "name": "codeweaver",
+  "version": "0.1.0",
+  "description": "My personal site",
+  "dependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.12.1",
+    "jshint": "^2.5.0",
+    "load-grunt-tasks": "^0.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:berwyn/codeweaver.git"
+  },
+  "author": "berwyn",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/berwyn/codeweaver/issues"
+  },
+  "homepage": "https://github.com/berwyn/codeweaver",
+  "private": true
+}

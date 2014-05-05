@@ -1,0 +1,44 @@
+$coatBase:     #403544;
+$coatTop:      #807584;
+
+$purpleLight:  #DB8DFF;
+$purpleDim:    #8E3AB3;
+$purpleBright: #A500FF;
+
+$notQuiteGrey: #e8e8e8;
+
+@mixin vendor-prefix($name, $value) {
+  -webkit-#{$name}: #{$value};
+  -moz-#{$name}: #{$value};
+  -ms-#{$name}: #{$value};
+  -o-#{$name}: #{$value};
+  #{$name}: #{$value};
+}
+
+*, 
+*:before, 
+*:after {
+  @include vendor-prefix('box-sizing', 'border-box');
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.callout .logo {
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.sidebar {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $coatBase;
+}

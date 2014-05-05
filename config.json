@@ -1,0 +1,16 @@
+{
+  "contentdir": "content",
+  "layoutdir":  "layouts",
+  "publishdir": "public",
+  "indexes": {
+    "category": "categories"
+  },
+  "baseurl":    "http://blog.codeweaver.so",
+  "title":      "Codeweaver's Keyboard",
+  "permalinks": {
+    "post": "/:year/:month/:title"
+  },
+  "params": {
+    "github": "berwyn"
+  }
+}
